@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<vars>
+	<db_host></db_host>
+	<db_user></db_user>
+	<db_password></db_password>
+	<db_name></db_name>
+</vars>
