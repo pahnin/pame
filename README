@@ -1,0 +1,20 @@
+PAME -- PHP App Made Easy
+
+To build php apps easily and rapidly, we're working on this project to make a platform
+to write you modules where each and every part of your site is a module.
+
+Also we are gonna write different module bundles for different types of web sites.
+
+Why is this started?
+
+When I thought of making the site with existing CMSs & Frame works, I was a newbie to PHP application develop ment, and I found it very difficult to hack(change or modify) the core functinality or some parts of the application. 
+
+All of them are too much complicated to understand.
+
+Reducing the complications pame is in development, where you can write you own fully functional, simple, less complicated app in minutes.
+
+In future we're thinking of starting an module store where developers can share their modules.
+
+So if you dont like the interface of module written by a developer you can replace it with another.
+
+Documentation to develop your sites using this PHP engine will be provided soon.
