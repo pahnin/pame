@@ -21,6 +21,10 @@
  *      
  *      
  */
+if (file_exists('db.xml')) {
+	$config = simplexml_load_file('db.xml');	
+}
+if($config->installed==1){
 require('vars.php');
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
@@ -32,5 +36,8 @@ else{
 	$view=$_GET['v'];
 }
  include('controller.php');
-
+}
+else{
+	header("Location: install/");
+}
 ?>

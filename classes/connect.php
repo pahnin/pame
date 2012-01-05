@@ -10,8 +10,7 @@ Class Connection{
 		 */ 
 		
 		if (file_exists('db.xml')) {
-			$config = simplexml_load_file('db.xml');
-			
+			$config = simplexml_load_file('db.xml');	
 		}
 		else {
 			echo 'database configuration not found';
