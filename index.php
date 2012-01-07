@@ -21,11 +21,9 @@
  *      
  *      
  */
-if (file_exists('db.xml')) {
-	$config = simplexml_load_file('db.xml');	
-}
-if($config->installed==1){
+
 require('vars.php');
+if(INSTALLED==1){
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 

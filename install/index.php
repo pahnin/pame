@@ -1,8 +1,14 @@
 <?php
-if (file_exists('db.xml')) {
-	$config = simplexml_load_file('db.xml');	
+session_start();
+if(isset($_SESSION['msg'])){
+	echo $_SESSION['msg'];
+	$_SESSION['msg']='';
 }
-if($config->installed!=1){
-	include('form.php');
+if(INSTALLED!=1){
+	include('form.tpl');
+}
+else{
+	include('redirect.tpl');
+	exit;
 }
 ?>

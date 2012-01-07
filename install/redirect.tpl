@@ -1,0 +1,9 @@
+<html>
+<head>
+<script type='text/javascript'>
+window.location='../';
+</script>
+</head>
+<body>
+</body>
+</html>

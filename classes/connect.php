@@ -5,23 +5,13 @@ Class Connection{
 	public $result;
 	public function __construct(){
 		
-		/*
-		 * Loading the database configuration from config.xml 
-		 */ 
-		
-		if (file_exists('db.xml')) {
-			$config = simplexml_load_file('db.xml');	
-		}
-		else {
-			echo 'database configuration not found';
-		}
 		
 		/*
 		 * Initialising connection to the database 
 		 */ 
 		 
-		$this->connect=mysql_connect($config->db_host,$config->db_user,$config->db_password);
-		mysql_select_db($config->db_name);
+		$this->connect=mysql_connect(DB_HOST,DB_USER,DB_PASS);
+		mysql_select_db(DB_NAME);
 	}
 	
 	function update($table,$constant1,$constant1value,$constant2,$constant2value,$changethis,$tothis){
@@ -84,6 +74,17 @@ Class Connection{
 	}
 	
 	function Insert($str){
+		
+		$this->result= mysql_query($str,$this->connect);
+		if($this->result){
+		return true;
+		}
+		else{
+			echo mysql_errno().':'.mysql_error();
+		}
+	}
+	
+	function Query($str){
 		
 		$this->result= mysql_query($str,$this->connect);
 		if($this->result){
