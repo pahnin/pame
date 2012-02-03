@@ -18,7 +18,7 @@ while($Class = readdir($classes)){
 	}
 }
 $hooks=$db->getTableasArray("SELECT hook FROM hooks ORDER BY `order` asc");
-$modules=$db->getTableasArray("SELECT hook, module FROM pages WHERE PAGE = '".$db->__($view)."' ORDER BY `order` asc");
+$modules=$db->getTableasArray("SELECT hook, module FROM ".$user."pages WHERE PAGE = '".$db->__($view)."' ORDER BY `order` asc");
 /*
  * Pushing all modules to be loaded for a hook into an array
  * with its hook name as variable name.
@@ -26,7 +26,6 @@ $modules=$db->getTableasArray("SELECT hook, module FROM pages WHERE PAGE = '".$d
  * names to be loaded
  * 
  */
-
 foreach($modules as $module){
 	if(!isset($$module['hook'])){
 		$$module['hook']= array();

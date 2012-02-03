@@ -1,0 +1,45 @@
+body {
+font-family: 'Lucida Sans Unicode','Lucida Grande',sans-serif;
+font-size: 14px;
+margin: 0;
+padding: 0;
+}
+body *{
+margin:0; padding: 0;
+}
+a{
+color: #444443;
+cursor: pointer;
+text-decoration: none;
+}
+#container,#header,#footer{
+width: 900px;
+margin: 5px auto;
+}
+form label{width: 60px;display: block;}
+form input{margin: 10px 0;}
+input, textarea{
+width: 16em;
+height: 2em;
+margin: 3px 0 10px;
+border: 1px solid gray;
+border-radius: 5px;
+padding: 2px;
+font-size: 12px;
+}
+textarea{
+width: 25em;
+height: 6em;
+}
+input:focus, textarea:focus{
+box-shadow: 0 0 3px -1px #6181C0;
+}
+ul{
+list-style-type: none;}
+ul li{
+float: left;
+padding: 4px 8px;
+}
+li.active a{
+color: #D22525;
+}

@@ -33,7 +33,17 @@ if(!isset($_GET['v'])){
 else{
 	$view=$_GET['v'];
 }
- include('controller.php');
+
+if(isset($_GET['u'])&&$_GET['u']=="admin"){
+	//authenticate
+	$user='admin_';
+}
+else{
+	$user='';
+}
+
+
+include('controller.php');
 }
 else{
 	header("Location: install/");

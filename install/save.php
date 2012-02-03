@@ -7,25 +7,6 @@ if(isset($_REQUEST['host']) && isset($_REQUEST['user']) && isset($_REQUEST['pass
 		header("Location: index.php");
 	}
 	else{
-		$_SESSION['installing']="true";
-		define('DB_HOST',$_REQUEST['host']);
-		define('DB_USER',$_REQUEST['user']);
-		define('DB_PASS',$_REQUEST['pass']);
-		define('DB_NAME',$_REQUEST['dbname']);
-		
-		$settings= array(
-		'DB_HOST'=>$_REQUEST['host'],
-		'DB_USER'=>$_REQUEST['user'],
-		'DB_PASS'=>$_REQUEST['pass'],
-		'DB_NAME'=>$_REQUEST['dbname'],
-		'INSTALLED'=>'1'
-		);
-		fwrite($vars_file,"<?php\n");	
-		foreach($settings as $setthis=>$tothis){
-			fwrite($vars_file,"define('".$setthis."', '".$tothis."');\n");
-			}
-		fwrite($vars_file,'?>');	
-		fclose($vars_file);
 		
 		/* Creating database tables */
 		
@@ -58,10 +39,33 @@ if(isset($_REQUEST['host']) && isset($_REQUEST['user']) && isset($_REQUEST['pass
 		`keyring` varchar(128) NOT NULL,
 		PRIMARY KEY (`id`)
 		) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;";
+
+		$_SESSION['installing']="true";
+		define('DB_HOST',$_REQUEST['host']);
+		define('DB_USER',$_REQUEST['user']);
+		define('DB_PASS',$_REQUEST['pass']);
+		define('DB_NAME',$_REQUEST['dbname']);
+		
+		$settings= array(
+		'DB_HOST'=>$_REQUEST['host'],
+		'DB_USER'=>$_REQUEST['user'],
+		'DB_PASS'=>$_REQUEST['pass'],
+		'DB_NAME'=>$_REQUEST['dbname'],
+		'INSTALLED'=>'1'
+		);
+		fwrite($vars_file,"<?php\n");	
+		foreach($settings as $setthis=>$tothis){
+			fwrite($vars_file,"define('".$setthis."', '".$tothis."');\n");
+			}
+		fwrite($vars_file,'?>');	
+		fclose($vars_file);
 		
 		include("../classes/connect.php");
 		
 		if($db->Query($sql1)&&$db->Query($sql2)&&$db->Query($sql3)&&$db->Query($sql4)){
+
+
+
 			include("register.tpl");
 		}
 		else{

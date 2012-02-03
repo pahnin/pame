@@ -88,7 +88,7 @@ Class Connection{
 		
 		$this->result= mysql_query($str,$this->connect);
 		if($this->result){
-		return true;
+		return $this->result;
 		}
 		else{
 			echo mysql_errno().':'.mysql_error();
