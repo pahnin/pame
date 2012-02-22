@@ -1,7 +1,7 @@
 <?php
-define('DB_HOST', '127.0.0.1');
-define('DB_USER', 'root');
-define('DB_PASS', 'phani');
-define('DB_NAME', 'pame');
-define('INSTALLED', '1');
+define('DB_HOST', '');
+define('DB_USER', '');
+define('DB_PASS', '');
+define('DB_NAME', '');
+define('INSTALLED', '');
 ?>
